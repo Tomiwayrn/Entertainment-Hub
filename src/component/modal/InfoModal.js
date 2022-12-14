@@ -80,10 +80,16 @@ const InfoModal = ({open , setOpen, type, id}) => {
         onClose={handleClose}
         aria-labelledby="parent-modal-title"
         aria-describedby="parent-modal-description"
+        sx={{overflow: "scroll"}}
       >
         <Box
         bgColor = {"primary"}
-        sx ={{display: "flex", alignItems: 'center', justifyContent: "center", height: "100vh"}}
+        sx ={{
+          display: "flex", 
+          overflow: "scroll", 
+          alignItems: 'center',
+           justifyContent: "center"
+            }}
         
         >
 

@@ -2,9 +2,9 @@ import React from 'react'
 import { Container, 
     CircularProgress, Box, Typography} from "@mui/material"
 import ErrorComponent from '../component/ErrorComponent';
-import CustomPagination from '../component/CustomPagination';
+import CustomPagination from '../component/Pagination/CustomPagination';
 import SingleCard from '../component/SingleCard';
-import SelectComponent from '../component/SelectComponent';
+import Genre from '../genre/genre';
 
 const Series = () => { const [state, setState ] = React.useState({
     page: 1,
@@ -14,20 +14,31 @@ const Series = () => { const [state, setState ] = React.useState({
 });
 
 const {page, status, content , numberOfPages} = state
-const [ genre , setGenre ] = React.useState("")
+const [selectedGenres, setSelectedGenres] = React.useState([]);
+const [genre , setGenre ] = React.useState([])
+const [urlGenre, setUrlGenre] = React.useState('') 
+
+React.useEffect(()=>{
+  const ids = genre.length !== 0 ? genre.map((item)=>{
+    return item.id
+  }):''
+
+  setUrlGenre(ids.toString())
+  setState({...state , page: 1})
+}, [genre])
 
 const fetchData = async () => {
   
         try {
             setState({...state, status: 'loading'})
         const res = await fetch(
-            `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${genre}`
+            `https://api.themoviedb.org/3/discover/tv?api_key=${process.env.REACT_APP_API_KEY}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=${page}&with_genres=${urlGenre}`
           )
 
          
         const data = await res.json()
         setState({...state , status: 'success', content: data.results,  numberOfPages: data.total_pages})
-        console.log(content)
+        
        
         }
 
@@ -46,13 +57,23 @@ fetchData();
 return (
 <div>
 <Container 
-        sx={{display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center"}} >
-          <SelectComponent 
-          setGenre = {setGenre}
-          />
+        sx={{
+          display: "flex", 
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center"}} >
+
+              <Genre
+               selectedGenres = {selectedGenres}
+               setSelectedGenres = {setSelectedGenres}
+               setGenre = {setGenre}
+               type = {"movie"} />
+
 
            { status === "loading" && 
-           <CircularProgress size={40}  sx={{margin: 10}} />
+           <CircularProgress 
+           size={40}  
+           sx={{margin: 10}} />
            
            }
            {

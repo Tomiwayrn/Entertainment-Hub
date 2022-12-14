@@ -4,7 +4,7 @@ import { Box, Button , Stack,
     Typography, CircularProgress} from '@mui/material'
 import  SearchOutlined  from '@mui/icons-material/SearchOutlined'
 import ErrorComponent from '../component/ErrorComponent';
-import CustomPagination from '../component/CustomPagination';
+import CustomPagination from '../component/Pagination/CustomPagination';
 import SingleCard from '../component/SingleCard';
 
 const Search = () => {

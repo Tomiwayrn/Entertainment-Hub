@@ -3,9 +3,9 @@ import React from 'react';
 import { Container, 
     CircularProgress, Box, Typography} from "@mui/material";
 import ErrorComponent from '../component/ErrorComponent';
-import CustomPagination from '../component/CustomPagination';
+import CustomPagination from '../component/Pagination/CustomPagination';
 import SingleCard from '../component/SingleCard';
-import SelectComponent from '../component/SelectComponent';
+import SelectComponent from '../genre/SelectComponent';
 
 
 
@@ -106,9 +106,8 @@ const Trending = () => {
 {
             status === "success" && content &&
             <Box sx ={{
-              display: {xs: "", md : "grid"
-            },
-              gridTemplateColumns: "1fr 1fr",
+              display: "grid",
+              gridTemplateColumns: {sm: "1fr 1fr", xs: "1fr"},
               gap: "20px"
             }}>
                 {

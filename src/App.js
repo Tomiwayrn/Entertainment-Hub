@@ -5,10 +5,10 @@ import Movie from './pages/Movie'
 import Series from './pages/Series'
 import Trending from './pages/Trending'
 import Search from './pages/Search'
-import BottomNav from './component/BottomNav'
-import Leftbar from './component/Leftbar'
-import Rightbar from './component/Rightbar'
-import Navbar from './component/Navbar'
+import BottomNav from './component/Navigation/BottomNav'
+import Leftbar from './component/Navigation/Leftbar'
+import Rightbar from './component/Navigation/Rightbar'
+import Navbar from './component/Navigation/Navbar'
 
 
 
@@ -47,7 +47,11 @@ const App = () => {
           search = {search}
           setSearch = {setSearch}
           />
-          <Stack  direction = "horizontal" spacing = {2}  justifyContent = "space-between">
+          <Stack  
+          direction = "horizontal" 
+          spacing = {2}  
+          justifyContent = "space-between">
+
             <Leftbar  setMode={setMode} mode={mode} />
  
 
@@ -55,7 +59,11 @@ const App = () => {
             flex = {4} 
             content = "center" 
             justifyContent = 'center'
-            sx={{overflow: "scroll", height: "85vh" , scrollBehaviour: "smooth", overflowX: "hidden" }}  
+            sx={{
+              overflow: "scroll", 
+              height: "85vh" , 
+              scrollBehaviour: "smooth", 
+              overflowX: "hidden" }}  
          
         >  
 
@@ -75,7 +83,11 @@ const App = () => {
          <Rightbar />
         </Stack>
 
-        <Box sx={{display: { xs: 'block', md: 'none'}, boxShadow: 2}}>
+        <Box 
+        sx={{
+          display: { xs: 'block', md: 'none'}, 
+          boxShadow: 2}}
+          >
           {windowSize < 912 ?  <BottomNav /> : "" }
           </Box>
         </Box>

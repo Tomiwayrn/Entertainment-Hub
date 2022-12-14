@@ -1,10 +1,11 @@
 import React from 'react'
-import SelectComponent from '../component/SelectComponent'
+import SelectComponent from './SelectComponent'
 
 const Genre = ({
     type, 
     selectedGenres,
-    setSelectedGenres
+    setSelectedGenres,
+    setGenre
 }) => {
 
     const [ genreContent , setGenreContent ] = React.useState([])
@@ -17,7 +18,7 @@ const Genre = ({
                 `https://api.themoviedb.org/3/genre/${type}/list?api_key=${process.env.REACT_APP_API_KEY}&language=en-US`)
             const data  = await res.json()
             setGenreContent(data.genres)
-             console.log(genreContent)
+             
         }
         catch(error){
             console.log(error)
@@ -33,7 +34,28 @@ const Genre = ({
     };
     // eslint-disable-next-line
   }, []);
-console.log(selectedGenres)
+
+
+  React.useEffect(()=>{
+   
+    let newGenreArr = []
+    
+    for( let i = 0 ; i < selectedGenres.length ; i++){
+
+     genreContent.filter((item)=>{
+      if(item.name === selectedGenres[i]){
+        return newGenreArr.push(item)
+      }
+    })
+    
+    
+  }
+
+  setGenre(newGenreArr)
+    console.log(newGenreArr)
+
+}, [selectedGenres])
+
   
   return (
     <div>

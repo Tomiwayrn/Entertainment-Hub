@@ -22,7 +22,7 @@ const Item = ({content, type, id, video, setOpen}) => {
   return (
     <Card
     sx ={{display: "flex",  padding: 1,
-     boxSizing: "border-box", width: "100%",position: "relative",
+     boxSizing: "border-box", position: "relative",
     alignItems: 'center', justifyContent: "center",  gap: 4}}
     className = "modal-content"
     >
@@ -43,10 +43,14 @@ const Item = ({content, type, id, video, setOpen}) => {
                       : unavailable
                   }
                   alt={content.name || content.title}
-                  className="ContentModal__portrait"
+                  width = "500"
                 />
 
-             <Stack >
+             <Stack 
+             sx={{
+              maxWidth : 420
+             }}
+             >
 
                  <Typography variant = "h2" component = "h1" color ={"text.primary"}>
                     {content.title || content.original_title} ({content.original_language})

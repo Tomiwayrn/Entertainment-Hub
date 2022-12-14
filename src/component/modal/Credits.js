@@ -66,7 +66,7 @@ function Credits({id, type})
 
 
     return (
-        <Box sx={{width: "100%", maxWidth: {sm: 340 ,md: 400, lg:610}}} >
+        <Box sx={{width: "100%",margin: "0 auto", maxWidth: {sm: 340 ,md: 400, lg:610}}} >
         <AliceCarousel
       mouseTracking
       infinite
