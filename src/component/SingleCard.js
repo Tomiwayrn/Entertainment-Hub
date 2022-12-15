@@ -20,9 +20,11 @@ const SingleCard = ({
     id = {id} 
     className = { right ? "paper-right" : '' }
     sx={{
-        padding: 3,
+        padding: right ? 0 : 2,
         marginTop: 2,
-        maxWidth: "300px",
+        width: "80%",
+        maxWidth: right ? "73%" : "280px",
+        margin: "0 auto"
 
     }}
     elevation = {3}
@@ -31,14 +33,21 @@ const SingleCard = ({
        loading = "lazy"
         src={`${img_main}${img}`}  
         alt = {title}
+        width = {"100%"}
         />
 
-        <Typography variant = {right ? "h5" : "h2"} component = "h2">
+        <Typography
+        sx={{fontSize: "35px"}} 
+        variant = {right ? "h5" : "h2"} 
+        component = "h2">
             {title || original_title || "Title Not found"}
         </Typography>
 
         {!right &&
-        <Typography variant = "h6" component = "p">
+        <Typography
+        sx={{fontSize: "15px"}} 
+        variant = "h6"
+         component = "p">
             {info || 'Content Not Found'}
         </Typography>}
 
@@ -52,7 +61,7 @@ const SingleCard = ({
         sx ={{textTransfrom : "capitalize"}}
         endIcon = {< OpenInNewIcon  />}
         onClick = {handleOpen}
-        > Read more</Button>
+        > More info</Button>
         </div>
 
         { open && 

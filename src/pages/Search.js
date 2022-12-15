@@ -93,13 +93,16 @@ const Search = () => {
 {
             status === "success" && content && search &&
             <>
-            <Typography variant = "h4" component = "h1">
+            <Typography
+            margin = {1} 
+            variant = "h4" 
+            component = "h1">
               Showing {value ? "Series" : "Movies"} matching {search} 
               </Typography>
 
             <Box sx ={{
                 display: "grid",
-                gridTemplateColumns: {sm :"1fr", md : "1fr 1fr " ,lg : "1fr 1fr 1fr"},
+                gridTemplateColumns: {xs:"1fr", sm :"1fr 1fr"  ,lg : "1fr 1fr 1fr"},
                 gap: "20px"
               }}>
                 {

@@ -21,9 +21,10 @@ const Item = ({content, type, id, video, setOpen}) => {
 
   return (
     <Card
-    sx ={{display: "flex",  padding: 1,
-     boxSizing: "border-box", position: "relative",
-    alignItems: 'center', justifyContent: "center",  gap: 4}}
+    sx ={{display: "flex",  padding: 2,
+     boxSizing: "border-box", 
+     position: "relative",
+     gap: 4}}
     className = "modal-content"
     >
       <Button
@@ -52,7 +53,11 @@ const Item = ({content, type, id, video, setOpen}) => {
              }}
              >
 
-                 <Typography variant = "h2" component = "h1" color ={"text.primary"}>
+                 <Typography
+                sx={{fontSize: 32}}
+                  variant = "h2" 
+                  component = "h1"
+                   color ={"text.primary"}>
                     {content.title || content.original_title} ({content.original_language})
               </Typography>
 
@@ -85,7 +90,7 @@ const Item = ({content, type, id, video, setOpen}) => {
                     
         
             <Typography variant = "h1" component = "p" color ={"text.primary"}
-            sx={{fontSize: 25}}>
+            sx={{fontSize: 18}}>
                 {content.overview || 'Content Not Found'}
             </Typography>
 

@@ -13,7 +13,12 @@ const CustomPagination = ({setState, state}) => {
     <>
         
         <Pagination 
-        sx={{width: '100%', display: 'flex',marginTop: "2rem", justifyContent: 'center'}} size='large'
+        sx={{
+        width: '100%', 
+        display: 'flex',
+        marginTop: "2rem",
+        marginBottom: 2, 
+        justifyContent: 'center'}} size='large'
         color='primary' 
         shape = "rounded"
         count = {noOfPage }

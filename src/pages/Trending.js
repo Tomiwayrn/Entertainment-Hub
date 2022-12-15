@@ -2,6 +2,7 @@
 import React from 'react';
 import { Container, 
     CircularProgress, Box, Typography} from "@mui/material";
+import { Whatshot } from '@mui/icons-material';
 import ErrorComponent from '../component/ErrorComponent';
 import CustomPagination from '../component/Pagination/CustomPagination';
 import SingleCard from '../component/SingleCard';
@@ -73,14 +74,22 @@ const Trending = () => {
             <>
 
            
-            <Typography variant = "h5" component = "p">
-              Trending
+            <Typography 
+            margin = {1}
+            variant = "h5" component = "p">
+              Trending 
+              <Whatshot
+              color = {'error'}
+               /> 
+               <Whatshot
+              color = {'error'}
+               /> 
               </Typography>
 
            
               <Box sx ={{
                 display: "grid",
-                gridTemplateColumns: {sm :"1fr", md : "1fr 1fr " ,lg : "1fr 1fr 1fr"},
+                gridTemplateColumns: {xs:"1fr", sm :"1fr 1fr"  ,lg : "1fr 1fr 1fr"},
                 gap: "20px"
               }}>
                 {
@@ -103,30 +112,6 @@ const Trending = () => {
           </>
            }
 
-{
-            status === "success" && content &&
-            <Box sx ={{
-              display: "grid",
-              gridTemplateColumns: {sm: "1fr 1fr", xs: "1fr"},
-              gap: "20px"
-            }}>
-                {
-                  content.map((item)=>{
-                    return(
-                      <SingleCard
-                      key = {item.id}
-                      id = {item.id}
-                      title = { item.title}
-                      img = {item.poster_path}
-                      info = {item.overview}
-                      rating= {item.vote_average}
-                      original_title = {item.original_title}
-                      />
-                    )
-                  })
-                }
-            </Box>
-           }
 
 
     {numberOfPages > 1 && <CustomPagination setState = {setState} state = {state}/> }

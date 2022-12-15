@@ -3,6 +3,7 @@ import { Box, Typography, CircularProgress } from "@mui/material";
 import SingleCard from '../SingleCard';
 import ErrorComponent from '../ErrorComponent';
 import Carousel from 'react-material-ui-carousel'
+import { Whatshot } from '@mui/icons-material';
 
 const Rightbar = () => {
 
@@ -46,11 +47,13 @@ React.useEffect(() => {
         color = {"text.primary"} 
         flex = {1} 
         p ={2}
-        sx={{display: {xs: "none", md : "block"}, boxShadow: 2}}>
+        sx={{display: {xs: "none", md : "block"}, boxShadow: 2, textAlign: "center"}}>
       <Box  >
 
-            <Typography variant = "h4" component = "h1">
-              Trending This week
+            <Typography
+            sx={{fontSize: "23px", margin: 1}}
+            variant = "h4" component = "h1">
+              Trending This week <Whatshot color ={"error"} />
               </Typography>
 
               { status === "loading" && 

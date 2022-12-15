@@ -1,6 +1,6 @@
 import React from 'react'
 import { BottomNavigation, BottomNavigationAction } from '@mui/material'
-import { Whatshot, Movie, Tv, Search } from '@mui/icons-material'
+import { Whatshot, Movie, Tv, Search } from '@mui/icons-material';
 import { useNavigate, useLocation } from "react-router-dom";
 
 const BottomNav = ({sx, sxItem}) => {
@@ -57,7 +57,9 @@ const BottomNav = ({sx, sxItem}) => {
 
 
   return (
-    <BottomNavigation  sx={sx}
+    <BottomNavigation  
+    marginBottom = {1}
+    sx={sx}
     value={value}
     onChange={(event, newValue) => {
       setValue(newValue);

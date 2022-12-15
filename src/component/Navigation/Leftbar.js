@@ -31,7 +31,7 @@ const Leftbar = ({  setMode, mode}) => {
 
   return (
     <Box
-     flex = {"1fr"}
+     flex = {""}
     sx = {{
         display: {xs: "none", md : "flex"
         },

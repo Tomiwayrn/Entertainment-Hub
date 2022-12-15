@@ -9,6 +9,7 @@ import BottomNav from './component/Navigation/BottomNav'
 import Leftbar from './component/Navigation/Leftbar'
 import Rightbar from './component/Navigation/Rightbar'
 import Navbar from './component/Navigation/Navbar'
+import ScrollButton from './component/ScrollButton';
 
 
 
@@ -22,6 +23,7 @@ const App = () => {
     }
   })
 
+
   const [ windowSize, setWindowSize ] = React.useState(window.innerWidth)
 
   React.useEffect(()=>{
@@ -33,41 +35,47 @@ const App = () => {
        return () => {
         window.removeEventListener('resize', handleSize)
        }
-  }, [])
+  }, []);
 
+ 
   
   return (
     <BrowserRouter>
 
         <ThemeProvider theme={darkTheme}>
         <Box bgcolor={"background.default"} >
+      
           <Navbar 
           setMode={setMode} 
           mode={mode}
           search = {search}
           setSearch = {setSearch}
           />
+         
           <Stack  
           direction = "horizontal" 
           spacing = {2}  
           justifyContent = "space-between">
 
-            <Leftbar  setMode={setMode} mode={mode} />
+            <Leftbar  
+  
+            setMode={setMode} mode={mode} />
  
 
             <Box  
-            flex = {4} 
+            flex = {3} 
             content = "center" 
             justifyContent = 'center'
             sx={{
               overflow: "scroll", 
-              height: "85vh" , 
+              height: windowSize > 912 ? "90vh" : "84vh" , 
               scrollBehaviour: "smooth", 
+              position: "relative",
               overflowX: "hidden" }}  
          
         >  
-
-           
+              <ScrollButton />
+     
              <Routes>
            
                <Route path = '/'  element = {<Trending /> } />
@@ -81,6 +89,7 @@ const App = () => {
 
           
          <Rightbar />
+         
         </Stack>
 
         <Box 
