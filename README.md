@@ -3,7 +3,7 @@
 <h1 align="center">Entertainment Hub WebApp</h1>
 
 <div align="center">
-   Live url here <a href="https://poetic-profiterole-9f8a10.netlify.app/movies" target="_blank">Entertainment Hub</a>.
+   Live url here <a href="https://poetic-profiterole-9f8a10.netlify.app/" target="_blank">Entertainment Hub</a>.
 </div>
 
 
