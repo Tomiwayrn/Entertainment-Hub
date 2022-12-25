@@ -1,9 +1,9 @@
 <!-- Please update value in the {}  -->
 
-<h1 align="center">Weather App</h1>
+<h1 align="center">Entertainment Web-app</h1>
 
 <div align="center">
-   Live url here <a href="https://poetic-profiterole-9f8a10.netlify.app/" target="_blank">Weather App</a>.
+   Live url here <a href="https://poetic-profiterole-9f8a10.netlify.app/" target="_blank">ENtertainment-hub</a>.
 </div>
 
 
