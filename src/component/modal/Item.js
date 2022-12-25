@@ -23,7 +23,9 @@ const Item = ({content, type, id, video, setOpen}) => {
     <Card
     sx ={{display: "flex",  padding: 2,
      boxSizing: "border-box", 
-     position: "relative",
+     position: "relative",width: "92%",maxWidth: "680px",
+     height: "100%",
+     overflow: "scroll",
      gap: 4}}
     className = "modal-content"
     >
@@ -44,8 +46,7 @@ const Item = ({content, type, id, video, setOpen}) => {
                       : unavailable
                   }
                   alt={content.name || content.title}
-                  width = "500"
-                />
+                  width = "100%"      />
 
              <Stack 
              sx={{

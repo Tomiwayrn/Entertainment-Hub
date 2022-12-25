@@ -1,5 +1,4 @@
-import React from 'react'
-import ErrorComponent from '../ErrorComponent'
+import React from 'react';
 import {Modal , Box,  CircularProgress} from '@mui/material';
 import Item from './Item';
 
@@ -80,30 +79,37 @@ const InfoModal = ({open , setOpen, type, id}) => {
         onClose={handleClose}
         aria-labelledby="parent-modal-title"
         aria-describedby="parent-modal-description"
-        sx={{overflow: "scroll", height: "100%"}}
+        sx={{overflow: "scroll", height: "100%", width: "100%" }}
       >
+
         <Box
-        bgColor = {"primary"}
         
         sx ={{
           display: "flex", 
           overflow: "scroll", 
           alignItems: 'center',
-           justifyContent: "center"
+           justifyContent: "center",
+           height: "100%", width: "100%" , position: "relative"
+        
             }}
-        
         >
+{
+            
+            state.status === "lodaing" & !content &&  <CircularProgress />
+            }  
+  
+      
 
 
         
-        {
-            
-          state.status = "loading" && !content &&  <CircularProgress />
-          }  
-
 
           {
             state.status = "success" &&
+            <Box
+            bgColor = {"primary"}
+            sx={{width: "100%",height: "a"}}
+            
+            >
              <Item 
              type = {type} 
              id = {id} 
@@ -111,14 +117,11 @@ const InfoModal = ({open , setOpen, type, id}) => {
              video ={video}
              setOpen ={setOpen}
              />
+
+        </Box>
           }
    
-        {
-            
-            state.status = "rejected" &&  !content &&  <ErrorComponent fetchData={fetchData} />
-            }  
-  
-        
+
          
         </Box>
       </Modal>

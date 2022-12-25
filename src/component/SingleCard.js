@@ -22,8 +22,8 @@ const SingleCard = ({
     sx={{
         padding: right ? 0 : 2,
         marginTop: 2,
-        width: "80%",
-        maxWidth: right ? "73%" : "280px",
+        width: "90%",
+        maxWidth: right ? "100%" : "320px",
         margin: "0 auto"
 
     }}

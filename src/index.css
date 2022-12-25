@@ -70,6 +70,7 @@ body {
   box-sizing: border-box;
   margin: 0 auto;
   flex-direction:column !important;
+  max-height: 600px !important;
   
 } 
 /* 
@@ -78,11 +79,12 @@ body {
 } */
 
 
-@media screen and (min-width: 932px) {
+@media screen and (min-width: 620px) {
   .modal-content {
    
-    flex-direction:row !important;
-   
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+   max-height: "";
     
   } 
 /* 

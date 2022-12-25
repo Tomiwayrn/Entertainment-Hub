@@ -89,7 +89,7 @@ const Trending = () => {
            
               <Box sx ={{
                 display: "grid",
-                gridTemplateColumns: {xs:"1fr", sm :"1fr 1fr"  ,lg : "1fr 1fr 1fr"},
+                gridTemplateColumns: { sm :"1fr 1fr"  ,lg : "1fr 1fr 1fr"},
                 gap: "20px"
               }}>
                 {

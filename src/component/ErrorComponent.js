@@ -4,7 +4,10 @@ import {Stack , Typography, Button } from "@mui/material"
 const ErrorComponent = ({fetchData}) => {
   return (
     <>
-          <Stack textAlign = "center"  m={10} sx={{gap: 7}}>
+          <Stack 
+          textAlign = "center" 
+           m={10} 
+           sx={{gap: 7, position: "relative"}}>
                    <Typography color ={"text.primary"}component= "h1" variant = "h3">
                     Oops an Error Occured 
                 </Typography> 
