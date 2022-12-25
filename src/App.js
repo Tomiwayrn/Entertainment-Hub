@@ -78,9 +78,9 @@ const App = () => {
      
              <Routes>
            
-               <Route path = '/'  element = {<Trending /> } />
-               <Route  path = '/series'  element = {<Series />} />
-               <Route path = '/movies'  element = {<Movie />} />
+//                <Route path = '/sw'  element = {<Trending /> } />
+//                <Route  path = '/series'  element = {<Series />} />
+               <Route path = '/'  element = {<Movie />} />
                <Route path = '/search'  element = {<Search />} />
              
               </Routes>
