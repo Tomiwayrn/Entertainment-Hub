@@ -28,8 +28,8 @@ const Navbar = ({mode , setMode}) => {
                <Switch
                 sx={{marginRight: '20px'}}
                 checked = {
-                    mode === "light" ? 0 
-                : 1}
+                    mode === "light" ? false 
+                : true}
                color = "primary" size = 'large' onClick = {handleClick}/>
                </Box>
             </Toolbar>
