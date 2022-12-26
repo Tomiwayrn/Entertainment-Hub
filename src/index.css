@@ -73,10 +73,18 @@ body {
   max-height: 600px !important;
   
 } 
-/* 
-.modal-content img {
-  height: 300px;
-} */
+
+.bottom-nav-container {
+ 
+  position: fixed !important;
+  bottom: 0% ;
+  margin-bottom: 9vh;
+  width: 100% ;
+}
+.css-4wdd6p-MuiBottomNavigation-root {
+  position: relative !important;
+ 
+}
 
 
 @media screen and (min-width: 620px) {
@@ -113,10 +121,20 @@ span{
 .css-imwso6-MuiBottomNavigationAction-label {
   display: none !important;
 }
-
-
-
-
-
   
+}
+
+
+@media screen and (min-width: 900px) {
+  .bottom-nav  {
+    display: flex !important;
+    flex-direction: column !important;
+    gap:20px !important;
+    margin-top: -10rem !important; 
+  }
+
+ 
+  .MuiBottomNavigationAction-label {
+    display: none !important;
+ }   
 }
