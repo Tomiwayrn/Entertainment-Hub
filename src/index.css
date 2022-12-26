@@ -85,6 +85,10 @@ body {
  
 }
 
+.css-1w1rbvj {
+justify-content: center;
+  align-items: center;
+}
 
 @media screen and (min-width: 620px) {
   .modal-content {
