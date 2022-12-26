@@ -43,7 +43,9 @@ const App = () => {
     <BrowserRouter>
 
         <ThemeProvider theme={darkTheme}>
-        <Box bgcolor={"background.default"} >
+        <Box 
+        position = {"relative"}
+        bgcolor={"background.default"} >
       
           <Navbar 
           setMode={setMode} 
@@ -68,7 +70,7 @@ const App = () => {
             justifyContent = 'center'
             sx={{
               overflow: "scroll", 
-              height: windowSize > 912 ? "90vh" : "84vh" , 
+              height: "100vh" , 
               scrollBehaviour: "smooth", 
               position: "relative",
               overflowX: "hidden" }}  
@@ -85,6 +87,14 @@ const App = () => {
              
               </Routes>
 
+              <Box 
+        className ="bottom-nav-container"
+        sx={{
+          display: { xs: 'block', md: 'none'}, 
+          boxShadow: 2}}
+          >
+          {windowSize < 912 ?  <BottomNav /> : "" }
+          </Box>
           </Box>
 
           
@@ -92,13 +102,7 @@ const App = () => {
          
         </Stack>
 
-        <Box 
-        sx={{
-          display: { xs: 'block', md: 'none'}, 
-          boxShadow: 2}}
-          >
-          {windowSize < 912 ?  <BottomNav /> : "" }
-          </Box>
+        
         </Box>
 
         </ThemeProvider>
