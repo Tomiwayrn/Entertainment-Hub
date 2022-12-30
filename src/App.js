@@ -1,6 +1,6 @@
 import React from 'react'
-import { Box, createTheme, Stack, ThemeProvider } from '@mui/material'
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Box, createTheme, Stack, ThemeProvider, Typography } from '@mui/material'
+import { BrowserRouter, Route, Routes , Link } from "react-router-dom";
 import Movie from './pages/Movie'
 import Series from './pages/Series'
 import Trending from './pages/Trending'
@@ -84,6 +84,14 @@ const App = () => {
                <Route  path = '/series'  element = {<Series />} />
                <Route path = '/movies'  element = {<Movie />} />
                <Route path = '/search'  element = {<Search />} />
+               <Route path "/*" element = { 
+                <Typography variant = "h1" >
+                  Page not found 
+                  <Link to = "/" >
+                 <Typography variant = "h5" sx ={{color: "blue" }} >
+                   Home 
+                  </Typography>
+                 </Typography>
              
               </Routes>
 
