@@ -85,7 +85,9 @@ const App = () => {
                <Route path = '/movies'  element = {<Movie />} />
                <Route path = '/search'  element = {<Search />} />
                <Route path "/*" element = { 
-                <Typography variant = "h1" >
+                <Typography
+                 sx={{ padding: "10vh" }}
+                variant = "h1" >
                   Page not found 
                   <Link to = "/" >
 
