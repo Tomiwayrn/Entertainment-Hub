@@ -92,6 +92,8 @@ const App = () => {
                    Home 
                   </Typography>
                  </Typography>
+                 />
+   
              
               </Routes>
 
