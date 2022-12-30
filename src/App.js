@@ -88,9 +88,12 @@ const App = () => {
                 <Typography variant = "h1" >
                   Page not found 
                   <Link to = "/" >
+
                  <Typography variant = "h5" sx ={{color: "blue" }} >
                    Home 
                   </Typography>
+                 </Link>
+
                  </Typography>
                  />
    
